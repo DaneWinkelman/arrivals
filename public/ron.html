@@ -1,0 +1,21 @@
+<script>
+  var theUrl = "http://developer.trimet.org/ws/V1/arrivals/appID/26905EAEEBA02217C9448D594?json=true&locIDs=1731";
+
+  $.getJSON(theUrl, function(json) {
+      console.log(json.resultSet);
+
+  var d1 = new Date(json.resultSet.arrival[0].scheduled),
+      d2 = new Date(json.resultSet.arrival[1].scheduled),
+      h1 = d1.getHours(),
+      h2 = d2.getHours(),
+      m1 = d1.getMinutes(),
+      m2 = d2.getMinutes();
+
+  $('#stopID').text('Stop ID: ' + json.resultSet.location[0].locid);
+  $('#location').text(json.resultSet.location[0].desc);
+  $('#fullSign1').text(json.resultSet.arrival[0].fullSign);
+  $('#scheduled1').text("Scheduled at: " + h1 + ":" + m1);
+  $('#fullSign2').text(json.resultSet.arrival[1].fullSign);
+  $('#scheduled2').text("Scheduled at: " + h2 + ":" + m2)
+  });
+</script>

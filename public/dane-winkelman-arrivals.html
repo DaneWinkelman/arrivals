@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+
+
+    <title>Transit Arrivals</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link  rel="stylesheet" href="stylesheets/danewinkelman.css">
+    <script src="js/danewinkelman.js"> </script>
+
+
+</head>
+
+<body>
+
+
+<div class="containter">
+
+<div class="jumbotron" id="center1">
+        <h1>Transit Arrival Calculator</h1>
+</div>
+
+    <script>
+        var theUrl = "http://developer.trimet.org/ws/V1/arrivals/appID/26905EAEEBA02217C9448D594?json=true&locIDs=1731"
+
+
+        // function updateTable1(){
+        $.getJSON(theUrl, function(json){
+        $('#stuff').text('Query Time:' + json.resultSet.queryTime);
+        });
+       // }
+
+        // $('#clickMe1').on('click',updateTable1)
+    </script>
+
+
+
+<div class="col-md-3" id="graysquare"></div>
+<div  class="col-md-6 aligncenter">
+    <p class="futura">enter your location below and click "Calculate Arrivals" to view arrival times</p>
+    <form>
+        <p>
+            <input  type="textbox"/></input>
+        </p>
+        <p>
+            <button  id = "clickMe1" class ="btn btn-lg btn-success">Calculate arrivals</button>
+        </p>
+</div>
+<div class="col-md-3" id="graysquare"></div>
+<!-- <div class="col-md-4"><img id="cropcow"src = "images/scooter.jpg"></div>
+<div class="col-md-4" ><img id="cropcow" src = "images/cow.jpg"></div>
+<div class="col-md-4" ><img id="cropcow" src = "images/goatscooter.jpg"></div> -->
+<!-- <img src = "images/photowall.jpg">
+ -->
+<section class="col-md-12" id="stuff" style="border: gray solid 5px; text-align:center"></section>
+
+</form>
+</section>
+
+
+</body>
+
+
+<section id="stopID"></section>
+
+$('#stopID').text('Stop ID:')
+

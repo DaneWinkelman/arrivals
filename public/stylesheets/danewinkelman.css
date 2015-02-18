@@ -1,0 +1,37 @@
+#center1 {
+  text-align: center;
+
+}
+
+#cropcow {
+  max-height: 300px;
+  max-width: 300px;
+
+}
+
+#graysquare{
+  background-color: gray;
+  height: 145px;
+d
+
+}
+
+.aligncenter{
+  text-align: center;
+
+
+
+}
+
+.futura {
+  font-family: futura;
+  font-size: 18px;
+  text-transform:  capitalize;
+
+
+}
+
+#graysquare1{
+  background-color: rgb(185, 184, 184);
+  height: 145px;
+
